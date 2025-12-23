@@ -1,0 +1,499 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #2c2d2b;
+    background-color: #f8f7f3;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(248, 247, 243, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2c2d2b;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #8b7355;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #f8f7f3 0%, #e8e6e0 100%);
+    padding: 2rem;
+    position: relative;
+}
+
+.countdown-container {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.countdown {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c2d2b;
+    letter-spacing: 2px;
+}
+
+.hero-content {
+    margin-top: 2rem;
+}
+
+.names-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.bride-name, .groom-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #2c2d2b;
+}
+
+.ampersand {
+    font-size: 3rem;
+    font-weight: 300;
+    color: #8b7355;
+}
+
+.wedding-date {
+    margin-bottom: 2rem;
+}
+
+.wedding-date p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #2c2d2b;
+}
+
+.we-getting-married h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #8b7355;
+    margin-bottom: 2rem;
+}
+
+.venue-info h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c2d2b;
+    margin-bottom: 2rem;
+}
+
+.hero-quote {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero-quote p {
+    font-style: italic;
+    color: #8b7355;
+    font-size: 1.1rem;
+}
+
+/* Itinerary Section */
+.itinerary {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #fff;
+}
+
+.itinerary h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #2c2d2b;
+    margin-bottom: 3rem;
+}
+
+.events-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.event {
+    background: #f8f7f3;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.event h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c2d2b;
+    margin-bottom: 1rem;
+}
+
+.event .time {
+    font-weight: 500;
+    color: #8b7355;
+    margin-bottom: 0.5rem;
+}
+
+.event .venue {
+    font-weight: 600;
+    color: #2c2d2b;
+    margin-bottom: 0.5rem;
+}
+
+.event .date {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.map-link {
+    display: inline-block;
+    background: #8b7355;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.map-link:hover {
+    background: #6d5a42;
+}
+
+.dress-code {
+    background: #f8f7f3;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.dress-code h3 {
+    font-size: 1.5rem;
+    color: #2c2d2b;
+    margin-bottom: 1rem;
+}
+
+.dress-code p {
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.no-children {
+    font-weight: 600;
+    color: #8b7355 !important;
+    margin-top: 1rem !important;
+}
+
+/* Transport Section */
+.transport {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #f8f7f3;
+}
+
+.transport h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #2c2d2b;
+    margin-bottom: 2rem;
+}
+
+.transport-info {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.destinations p, .schedules p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.schedules h3 {
+    margin-bottom: 1rem;
+    color: #8b7355;
+}
+
+/* Recommendations Section */
+.recommendations {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #fff;
+}
+
+.recommendations h2 {
+    font-size: 2rem;
+    color: #2c2d2b;
+    margin-bottom: 2rem;
+}
+
+.recommendations p {
+    max-width: 800px;
+    margin: 0 auto 1rem;
+    color: #666;
+}
+
+.click-info {
+    font-style: italic;
+    color: #8b7355 !important;
+    margin-bottom: 3rem !important;
+}
+
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category h3 {
+    font-size: 1.3rem;
+    color: #2c2d2b;
+    margin-bottom: 1rem;
+}
+
+.places {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.places a {
+    color: #8b7355;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.places a:hover {
+    background: #f8f7f3;
+}
+
+/* Gift Registry Section */
+.gifts {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #f8f7f3;
+}
+
+.gifts h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #2c2d2b;
+    margin-bottom: 2rem;
+}
+
+.gifts p {
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    color: #666;
+}
+
+.gift-registry {
+    margin-top: 2rem;
+}
+
+.gift-registry p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #8b7355;
+    margin-bottom: 1rem;
+}
+
+.gift-link {
+    display: inline-block;
+    background: #8b7355;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+}
+
+.gift-link:hover {
+    background: #6d5a42;
+}
+
+/* RSVP Section */
+.rsvp {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: #fff;
+}
+
+.rsvp h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #2c2d2b;
+    margin-bottom: 1rem;
+}
+
+.rsvp > p {
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.rsvp-form {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea {
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.rsvp-form input:focus,
+.rsvp-form select:focus,
+.rsvp-form textarea:focus {
+    outline: none;
+    border-color: #8b7355;
+}
+
+.rsvp-form textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.rsvp-form button {
+    background: #8b7355;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.rsvp-form button:hover {
+    background: #6d5a42;
+}
+
+/* Footer */
+footer {
+    background: #2c2d2b;
+    color: #f8f7f3;
+    text-align: center;
+    padding: 2rem;
+}
+
+footer a {
+    color: #8b7355;
+    text-decoration: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.8rem;
+    }
+    
+    .bride-name, .groom-name {
+        font-size: 2.5rem;
+    }
+    
+    .ampersand {
+        font-size: 2rem;
+    }
+    
+    .names-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .countdown {
+        font-size: 1rem;
+    }
+    
+    .transport-info {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .events-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animation for countdown */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.countdown {
+    animation: pulse 2s infinite;
+}
