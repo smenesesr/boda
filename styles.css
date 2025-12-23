@@ -49,27 +49,107 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(135deg, #f8f7f3 0%, #e8e6e0 100%);
-    padding: 2rem;
     position: relative;
+    overflow: hidden;
 }
 
-.countdown-container {
+.hero-background {
     position: absolute;
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
-.countdown {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #2c2d2b;
-    letter-spacing: 2px;
+.photo-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.photo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    filter: grayscale(100%) contrast(1.2) brightness(0.7);
+}
+
+.photo.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(44, 45, 43, 0.7) 0%, rgba(139, 115, 85, 0.6) 100%);
+    z-index: 2;
 }
 
 .hero-content {
-    margin-top: 2rem;
+    position: relative;
+    z-index: 3;
+    color: white;
+    padding: 2rem;
+}
+
+.countdown-container {
+    margin-bottom: 3rem;
+}
+
+.countdown-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #f8f7f3;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(248, 247, 243, 0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(248, 247, 243, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem 1rem;
+    min-width: 80px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.countdown-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #f8f7f3;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #f8f7f3;
+    letter-spacing: 1px;
+    margin-top: 0.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 .names-container {
@@ -84,13 +164,15 @@ body {
     font-family: 'Dancing Script', cursive;
     font-size: 4rem;
     font-weight: 700;
-    color: #2c2d2b;
+    color: #f8f7f3;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
 }
 
 .ampersand {
     font-size: 3rem;
     font-weight: 300;
-    color: #8b7355;
+    color: #f8f7f3;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .wedding-date {
@@ -98,37 +180,48 @@ body {
 }
 
 .wedding-date p {
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: 2px;
-    color: #2c2d2b;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #f8f7f3;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .we-getting-married h2 {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5rem;
-    color: #8b7355;
+    font-size: 2.8rem;
+    color: #f8f7f3;
     margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .venue-info h3 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
-    color: #2c2d2b;
-    margin-bottom: 2rem;
+    color: #f8f7f3;
+    margin-bottom: 3rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.hero-quote {
+.scroll-indicator {
     position: absolute;
-    bottom: 50px;
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
+    text-align: center;
+    color: #f8f7f3;
 }
 
-.hero-quote p {
-    font-style: italic;
-    color: #8b7355;
-    font-size: 1.1rem;
+.scroll-arrow {
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+    margin-bottom: 0.5rem;
+}
+
+.scroll-indicator p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Itinerary Section */
@@ -227,7 +320,6 @@ body {
 /* Transport Section */
 .transport {
     padding: 5rem 2rem;
-    text-align: center;
     background: #f8f7f3;
 }
 
@@ -236,81 +328,192 @@ body {
     font-size: 2.5rem;
     color: #2c2d2b;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
-.transport-info {
+.transport-methods {
+    max-width: 1000px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    gap: 4rem;
-    max-width: 800px;
-    margin: 2rem auto;
+    flex-direction: column;
+    gap: 3rem;
 }
 
-.destinations p, .schedules p {
-    margin-bottom: 0.5rem;
-    font-weight: 500;
+.transport-method {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.schedules h3 {
-    margin-bottom: 1rem;
+.transport-method h3 {
+    font-size: 1.8rem;
     color: #8b7355;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.route {
+    margin-bottom: 2rem;
+}
+
+.route:last-child {
+    margin-bottom: 0;
+}
+
+.route h4 {
+    font-size: 1.2rem;
+    color: #2c2d2b;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.route p {
+    color: #666;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.route p strong {
+    color: #8b7355;
+    font-weight: 600;
+}
+
+.route-link, .bus-link, .airline-link {
+    display: inline-block;
+    background: #8b7355;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.8rem;
+    transition: background 0.3s ease;
+}
+
+.route-link:hover, .bus-link:hover, .airline-link:hover {
+    background: #6d5a42;
+}
+
+.bus-links, .airline-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.8rem;
+}
+
+.bus-links .bus-link, .airline-links .airline-link {
+    margin-top: 0;
 }
 
 /* Recommendations Section */
 .recommendations {
     padding: 5rem 2rem;
-    text-align: center;
     background: #fff;
 }
 
 .recommendations h2 {
     font-size: 2rem;
     color: #2c2d2b;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.main-hotel {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    text-align: center;
+}
+
+.main-hotel h3 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    color: #8b7355;
+    margin-bottom: 1.5rem;
+}
+
+.hotel-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #2c2d2b;
     margin-bottom: 2rem;
 }
 
-.recommendations p {
-    max-width: 800px;
-    margin: 0 auto 1rem;
-    color: #666;
+.hotel-description strong {
+    color: #8b7355;
 }
 
-.click-info {
+.full-disclosure {
+    background: #f8f7f3;
+    padding: 2rem;
+    border-radius: 10px;
+    border-left: 4px solid #8b7355;
+}
+
+.full-disclosure p {
     font-style: italic;
-    color: #8b7355 !important;
-    margin-bottom: 3rem !important;
+    color: #666;
+    line-height: 1.6;
+    text-align: left;
 }
 
-.recommendations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3rem;
-    max-width: 1200px;
+.full-disclosure strong {
+    color: #8b7355;
+    font-weight: 600;
+}
+
+.alternative-hotels {
+    max-width: 800px;
     margin: 0 auto;
+    text-align: center;
 }
 
-.category h3 {
-    font-size: 1.3rem;
+.alternative-hotels h3 {
+    font-size: 1.5rem;
     color: #2c2d2b;
+    margin-bottom: 2rem;
+}
+
+.hotels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.hotel-card {
+    background: #f8f7f3;
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hotel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.hotel-card h4 {
+    color: #8b7355;
+    font-weight: 600;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
 }
 
-.places {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.places a {
-    color: #8b7355;
+.hotel-link {
+    display: inline-block;
+    background: #8b7355;
+    color: white;
+    padding: 0.5rem 1rem;
     text-decoration: none;
-    padding: 0.5rem;
     border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 500;
     transition: background 0.3s ease;
 }
 
-.places a:hover {
-    background: #f8f7f3;
+.hotel-link:hover {
+    background: #6d5a42;
 }
 
 /* Gift Registry Section */
@@ -451,6 +654,19 @@ footer a {
         font-size: 0.8rem;
     }
     
+    .countdown {
+        gap: 1rem;
+    }
+    
+    .countdown-item {
+        min-width: 60px;
+        padding: 1rem 0.5rem;
+    }
+    
+    .countdown-number {
+        font-size: 1.8rem;
+    }
+    
     .bride-name, .groom-name {
         font-size: 2.5rem;
     }
@@ -464,17 +680,43 @@ footer a {
         gap: 1rem;
     }
     
-    .countdown {
+    .wedding-date p {
         font-size: 1rem;
+        letter-spacing: 1px;
     }
     
-    .transport-info {
-        flex-direction: column;
+    .we-getting-married h2 {
+        font-size: 2rem;
+    }
+    
+    .venue-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .transport-methods {
         gap: 2rem;
     }
     
-    .recommendations-grid {
+    .transport-method {
+        padding: 1.5rem;
+    }
+    
+    .bus-links, .airline-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .hotels-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .hotel-card {
+        padding: 1rem;
+    }
+    
+    .full-disclosure {
+        padding: 1.5rem;
     }
     
     .events-container {
@@ -494,6 +736,17 @@ html {
     100% { transform: scale(1); }
 }
 
-.countdown {
-    animation: pulse 2s infinite;
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
 }
+
+.countdown-item {
+    animation: pulse 3s infinite;
+}
+
+.countdown-item:nth-child(1) { animation-delay: 0s; }
+.countdown-item:nth-child(2) { animation-delay: 0.5s; }
+.countdown-item:nth-child(3) { animation-delay: 1s; }
+.countdown-item:nth-child(4) { animation-delay: 1.5s; }

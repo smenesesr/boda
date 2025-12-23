@@ -22,16 +22,38 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="countdown-container">
-            <div id="countdown" class="countdown">
-                <span id="days">0</span> DÍAS 
-                <span id="hours">0</span> HRS 
-                <span id="minutes">0</span> MIN 
-                <span id="seconds">0</span> SEG
+        <div class="hero-background">
+            <div class="photo-carousel">
+                <div class="photo active" style="background-image: url('images/couple1.jpg')"></div>
+                <div class="photo" style="background-image: url('images/couple2.jpg')"></div>
+                <div class="photo" style="background-image: url('images/couple3.jpg')"></div>
             </div>
+            <div class="hero-overlay"></div>
         </div>
         
         <div class="hero-content">
+            <div class="countdown-container">
+                <h3 class="countdown-title">Faltan</h3>
+                <div id="countdown" class="countdown">
+                    <div class="countdown-item">
+                        <span id="days" class="countdown-number">0</span>
+                        <span class="countdown-label">DÍAS</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="hours" class="countdown-number">0</span>
+                        <span class="countdown-label">HRS</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="minutes" class="countdown-number">0</span>
+                        <span class="countdown-label">MIN</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span id="seconds" class="countdown-number">0</span>
+                        <span class="countdown-label">SEG</span>
+                    </div>
+                </div>
+            </div>
+            
             <div class="names-container">
                 <h1 class="bride-name">Gloria</h1>
                 <div class="ampersand">&</div>
@@ -48,6 +70,11 @@
             
             <div class="venue-info">
                 <h3>Hotel Mocambo</h3>
+            </div>
+            
+            <div class="scroll-indicator">
+                <div class="scroll-arrow">↓</div>
+                <p>Desliza para más información</p>
             </div>
         </div>
     </section>
@@ -101,11 +128,13 @@
                 <div class="route">
                     <h4>Desde Morelia y Querétaro</h4>
                     <p>Tomar el Arco Norte. <strong>Ojo:</strong> Google Maps sugiere seguir hasta Puebla y tomar la carretera por Orizaba. Recomendamos salir del Arco Norte en Huamantla rumbo a Perote y tomar el libramiento de Xalapa. Esto debido a que la carretera hacia Orizaba tiene curvas muy pronunciadas y suele tener mucha neblina.</p>
+                    <a href="https://maps.app.goo.gl/GUxYtXFjdDwSmxYv8" class="route-link" target="_blank">Ver ruta propuesta</a>
                 </div>
                 
                 <div class="route">
                     <h4>Desde CDMX</h4>
                     <p>Tomar la salida a Texcoco. <strong>Ojo:</strong> Google Maps sugiere seguir hasta Puebla y en Amozoc tomar la carretera por Orizaba. Si se sale por Chalco recomendamos en Amozoc tomar la 140 D rumbo a Perote y tomar el libramiento de Xalapa. Esto debido a que la carretera hacia Orizaba tiene curvas muy pronunciadas y suele tener mucha neblina.</p>
+                    <a href="https://maps.app.goo.gl/4uYR4StxPLWKwo5v5" class="route-link" target="_blank">Ver ruta propuesta</a>
                 </div>
             </div>
             
@@ -115,11 +144,16 @@
                 <div class="route">
                     <h4>Desde Morelia y Querétaro</h4>
                     <p>ETN y Tursitar tienen servicios a Puebla. Ahí tomar un ADO GL hacia Veracruz.</p>
+                    <div class="bus-links">
+                        <a href="https://etn.com.mx/" class="bus-link" target="_blank">ETN/Tursitar</a>
+                        <a href="https://www.ado.com.mx/" class="bus-link" target="_blank">ADO</a>
+                    </div>
                 </div>
                 
                 <div class="route">
                     <h4>Desde CDMX</h4>
                     <p>El mayor número de corridas a Veracruz salen de TAPO. ADO tiene el servicio de lujo Platino y el ADO GL.</p>
+                    <a href="https://www.ado.com.mx/" class="bus-link" target="_blank">ADO</a>
                 </div>
             </div>
             
@@ -128,6 +162,10 @@
                 
                 <div class="route">
                     <p>El aeropuerto más cercano a Boca del Río es el Aeropuerto Internacional General Heriberto Jara. Aeroméxico y Viva ofrecen vuelos con conexión.</p>
+                    <div class="airline-links">
+                        <a href="https://www.aeromexico.com/es-mx" class="airline-link" target="_blank">Aeroméxico</a>
+                        <a href="https://www.vivaaerobus.com/" class="airline-link" target="_blank">Viva Aerobus</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -151,18 +189,27 @@
             <div class="hotels-grid">
                 <div class="hotel-card">
                     <h4>Hotel Galería Plaza</h4>
+                    <a href="https://www.galeriaplazahotels.com.mx/es/veracruz/" class="hotel-link" target="_blank">Ver hotel</a>
                 </div>
                 <div class="hotel-card">
-                    <h4>Hampton</h4>
+                    <h4>AC Hotel by Marriott</h4>
+                    <a href="https://www.marriott.com/en-us/hotels/verac-ac-hotel-veracruz/overview/" class="hotel-link" target="_blank">Ver hotel</a>
+                </div>
+                <div class="hotel-card">
+                    <h4>Hampton by Hilton</h4>
+                    <a href="https://www.hilton.com/en/hotels/verachx-hampton-veracruz-boca-del-rio/" class="hotel-link" target="_blank">Ver hotel</a>
                 </div>
                 <div class="hotel-card">
                     <h4>Ramada</h4>
+                    <a href="https://www.wyndhamhotels.com/es-xl/ramada/boca-del-rio-mexico/ramada-plazapboca-del-rio/overview" class="hotel-link" target="_blank">Ver hotel</a>
                 </div>
                 <div class="hotel-card">
                     <h4>Holiday Inn</h4>
+                    <a href="https://www.ihg.com/holidayinn/hotels/us/es/boca-del-rio/vcrmx/hoteldetail?" class="hotel-link" target="_blank">Ver hotel</a>
                 </div>
                 <div class="hotel-card">
                     <h4>Plaza Sol</h4>
+                    <a href="https://www.hotelplazasol.com/" class="hotel-link" target="_blank">Ver hotel</a>
                 </div>
             </div>
         </div>

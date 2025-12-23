@@ -1,6 +1,6 @@
 // Countdown Timer
 function updateCountdown() {
-    const weddingDate = new Date('2025-06-15T17:00:00').getTime();
+    const weddingDate = new Date('2025-03-07T16:00:00').getTime();
     const now = new Date().getTime();
     const distance = weddingDate - now;
 
@@ -15,13 +15,28 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 
     if (distance < 0) {
-        document.getElementById('countdown').innerHTML = "¡Ya es el gran día!";
+        document.getElementById('countdown').innerHTML = "<div class='countdown-item'><span class='countdown-number'>¡Ya es el gran día!</span></div>";
     }
+}
+
+// Photo carousel
+function initPhotoCarousel() {
+    const photos = document.querySelectorAll('.photo');
+    let currentPhoto = 0;
+    
+    setInterval(() => {
+        photos[currentPhoto].classList.remove('active');
+        currentPhoto = (currentPhoto + 1) % photos.length;
+        photos[currentPhoto].classList.add('active');
+    }, 5000); // Change photo every 5 seconds
 }
 
 // Update countdown every second
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+// Initialize photo carousel
+initPhotoCarousel();
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -109,10 +124,8 @@ document.querySelectorAll('.places a').forEach(link => {
 // Add map link functionality
 document.querySelectorAll('.map-link').forEach(link => {
     link.addEventListener('click', function(e) {
-        e.preventDefault();
-        // Replace with actual Google Maps link
-        const mapUrl = 'https://maps.google.com/?q=Hacienda+San+Miguel+Ciudad+de+Mexico';
-        window.open(mapUrl, '_blank');
+        // Links already have href and target="_blank" in HTML
+        // No need to prevent default or add additional functionality
     });
 });
 
