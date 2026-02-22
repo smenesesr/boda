@@ -227,8 +227,79 @@
     <!-- RSVP Section -->
     <section id="rsvp" class="rsvp">
         <h2>RSVP</h2>
-        <p>Favor de confirmar asistencia </p>
+        <p>Favor de confirmar asistencia</p>
         
+        <div class="rsvp-form-container">
+            <!-- Step 1: Search Guest -->
+            <div id="step1">
+                <input type="text" id="guestName" placeholder="Escribe tu nombre..." autocomplete="off">
+                <div id="suggestions" class="suggestions"></div>
+                <button onclick="selectGuest()" class="rsvp-button">Continuar</button>
+                <div id="searchError" class="error hidden"></div>
+            </div>
+
+            <!-- Step 2: Confirmation Form -->
+            <div id="step2" class="hidden">
+                <p id="guestInfo" class="guest-info"></p>
+                
+                <label>¿Nos acompañarás?</label>
+                <select id="asiste" onchange="handleAsistenciaChange()">
+                    <option value="">Selecciona</option>
+                    <option value="Claro, nos vemos desde el viernes!">Claro, nos vemos desde el viernes!</option>
+                    <option value="Claro, pero solo podre llegar el sabado a la ceremonia">Claro, pero solo podré llegar el sábado a la ceremonia</option>
+                    <option value="No, no puedo asistir =(">No, no puedo asistir =(</option>
+                </select>
+                
+                <div id="diaLlegadaSection" class="hidden">
+                    <label>¿Qué día llegas a Veracruz?</label>
+                    <select id="dia_llegada" onchange="handleDiaLlegadaChange()">
+                        <option value="">Selecciona</option>
+                        <option value="Vivimos en Veracruz">Vivimos en Veracruz</option>
+                        <option value="Antes del jueves">Antes del jueves</option>
+                        <option value="Jueves 05">Jueves 05</option>
+                        <option value="Viernes 06">Viernes 06</option>
+                        <option value="Sabado 07">Sábado 07</option>
+                    </select>
+                </div>
+                
+                <div id="llegoSection" class="hidden">
+                    <label>¿Cómo llegas?</label>
+                    <select id="llego" onchange="handleLlegoChange()">
+                        <option value="">Selecciona</option>
+                        <option value="Autobus">Autobús</option>
+                        <option value="Manejando">Manejando</option>
+                        <option value="Avion">Avión</option>
+                    </select>
+                </div>
+                
+                <div id="vueloSection" class="hidden">
+                    <label>Selecciona tu vuelo</label>
+                    <select id="vuelo">
+                        <option value="">Selecciona</option>
+                    </select>
+                </div>
+                
+                <div id="hospedajeSection" class="hidden">
+                    <label>¿Ya tienes asegurado tu hospedaje?</label>
+                    <select id="hospedaje">
+                        <option value="">Selecciona</option>
+                        <option value="Si, me quedo en el Mocambo">Sí, me quedo en el Mocambo</option>
+                        <option value="Si, me quedo en un hotel cerca">Sí, me quedo en un hotel cerca</option>
+                        <option value="No, todavia no he reservado">No, todavía no he reservado</option>
+                    </select>
+                </div>
+                
+                <button onclick="submitRSVP()" class="rsvp-button">Confirmar</button>
+                <div id="submitError" class="error hidden"></div>
+            </div>
+
+            <!-- Step 3: Success & PDF -->
+            <div id="step3" class="hidden">
+                <h3 class="success-title">¡Confirmación exitosa!</h3>
+                <p class="success-message">Gracias por confirmar tu asistencia</p>
+                <a id="pdfLink" href="#" target="_blank" class="pdf-button">Descargar pase digital</a>
+            </div>
+        </div>
 
     </section>
 
