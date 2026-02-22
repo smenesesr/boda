@@ -750,3 +750,158 @@ html {
 .countdown-item:nth-child(2) { animation-delay: 0.5s; }
 .countdown-item:nth-child(3) { animation-delay: 1s; }
 .countdown-item:nth-child(4) { animation-delay: 1.5s; }
+
+
+/* RSVP Form Styles */
+.hidden {
+    display: none !important;
+}
+
+.rsvp-form-container {
+    max-width: 600px;
+    margin: 3rem auto 0;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.rsvp-form-container label {
+    display: block;
+    font-weight: 500;
+    color: #2c2d2b;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.rsvp-form-container input,
+.rsvp-form-container select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #e0ddd8;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #2c2d2b;
+    background: #f8f7f3;
+    transition: border-color 0.3s ease;
+}
+
+.rsvp-form-container input:focus,
+.rsvp-form-container select:focus {
+    outline: none;
+    border-color: #8b7355;
+}
+
+.rsvp-button {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    background: #8b7355;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.rsvp-button:hover {
+    background: #6f5a43;
+}
+
+.suggestions {
+    border: 2px solid #e0ddd8;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    background: white;
+    position: absolute;
+    width: calc(100% - 5rem);
+    max-width: 550px;
+    z-index: 1000;
+    margin-top: 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.suggestion-item {
+    padding: 0.8rem;
+    cursor: pointer;
+    border-bottom: 1px solid #f0ede8;
+    transition: background 0.2s ease;
+}
+
+.suggestion-item:hover {
+    background: #f8f7f3;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.guest-info {
+    background: #f8f7f3;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+    color: #2c2d2b;
+    white-space: pre-line;
+}
+
+.error {
+    color: #c74444;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    background: #fdeaea;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.success-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #4a7c59;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.success-message {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c2d2b;
+}
+
+.pdf-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #8b7355;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.pdf-button:hover {
+    background: #6f5a43;
+}
+
+#step3 {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .rsvp-form-container {
+        padding: 1.5rem;
+    }
+    
+    .suggestions {
+        width: calc(100% - 3rem);
+    }
+}
