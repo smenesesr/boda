@@ -341,9 +341,9 @@ body {
 
 .transport-method {
     background: #fff;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .transport-method h3 {
@@ -753,6 +753,14 @@ html {
 
 
 /* RSVP Form Styles */
+section h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #2c2d2b;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
 .hidden {
     display: none !important;
 }
@@ -904,4 +912,42 @@ html {
     .suggestions {
         width: calc(100% - 3rem);
     }
+}
+
+
+/* Accordion styles for transport section */
+.transport-method h3.accordion-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    transition: color 0.3s ease;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+}
+
+.transport-method h3.accordion-header:hover {
+    color: #8b7355;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.7em;
+    margin-left: 0.5rem;
+}
+
+.accordion-header.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.accordion-content.active {
+    max-height: 2000px;
 }

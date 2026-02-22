@@ -500,3 +500,23 @@ async function submitRSVP() {
 if (document.getElementById('guestName')) {
   loadRSVPGuests();
 }
+
+
+// Accordion functionality for transport section
+function toggleAccordion(header) {
+    const content = header.nextElementSibling;
+    const isActive = header.classList.contains('active');
+    
+    // Close all accordions in the same section
+    const allHeaders = header.parentElement.parentElement.querySelectorAll('.accordion-header');
+    const allContents = header.parentElement.parentElement.querySelectorAll('.accordion-content');
+    
+    allHeaders.forEach(h => h.classList.remove('active'));
+    allContents.forEach(c => c.classList.remove('active'));
+    
+    // Toggle current accordion
+    if (!isActive) {
+        header.classList.add('active');
+        content.classList.add('active');
+    }
+}
